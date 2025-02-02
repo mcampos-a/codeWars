@@ -31,5 +31,26 @@
 //Solution
 
 function digPow(n, p){
-  // ...
+  //We convert n to a string so we can iterate through each number of the integer later
+    let firstNumString = n.toString()
+  //we store the length of the n string to use in a loop
+    let length = firstNumString.length
+  //we set up a place where to add up our consecutive power sum
+    let result = 0
+  //Now using a for loop we will iterate through each digit in the n integer. Stopping when we reached the length of that integer.
+    for(let i=0; i<length; i++){
+  //Using the parseInt() method we take the string digit and convert it back to an integer to use in our consecutive power calcs
+      //using charAt() we select each digit in the string of iterger n and pull it back as an integer with with parseInt
+      let numSeries = parseInt(firstNumString.charAt(i),10)
+      //Now we perform the power calculation shown in the task.
+      result += Math.pow(numSeries,p+i)
+    }
+  //Finally we check if the sum of the powers of each digit in the integer n starting at p is divisble by p we return the sum of the series
+    if(result%n===0){
+      return result/n
+  //if the sum of the series is not divisble by p we will return -1 as prompted
+    }else{
+      return -1
+    }
+  }
 }
