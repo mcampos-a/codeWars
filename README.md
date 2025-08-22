@@ -1,6 +1,7 @@
 # CodeWars Daily Challenges
 
-![image](https://github.com/user-attachments/assets/f91b6768-908e-4d93-9ef0-21f97e0986a1)
+<img width="939" height="853" alt="image" src="https://github.com/user-attachments/assets/4d253c68-1ab9-480f-a1f0-0a4003d9dd19" />
+
 
 A repository filled with codewars challenges (kata). Pushing over 5 solutions every week.
 **[Profile](https://www.codewars.com/users/m.Campos)**
