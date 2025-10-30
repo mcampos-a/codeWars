@@ -32,6 +32,8 @@ if(x > 0 && y < 0) return 4
 if(x < 0 && y > 0) return 2
 //check if x is negative and y is negative for quadrant 3
 if(x < 0 && y < 0) return 3
+
+let x =1
 }
 
 //num -> non-zero nums that represent the quadrants x and y coordinates. Wont be empty, wont be zero, wont be null or undefined, will always be nums
