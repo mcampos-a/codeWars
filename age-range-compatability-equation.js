@@ -1,54 +1,38 @@
 //8 Kyu
-//Age Range Compatability Equation
-//fundamentals
+//Multiple of index
+//fundamentals, arrays
 
-// Everybody knows the classic "half your age plus seven" dating rule that a lot of people follow (including myself). It's the 'recommended' age range in which to date someone.
+// Return a new array consisting of elements which are multiple of their own index in input array (length > 1).
 
-// Min=(Age/2)+7
-// Max= 2*(Age-7)
+// Some cases:
+// [22, -6, 32, 82, 9, 25] =>  [-6, 32, 25]
 
-// Minimum age ≤ Your age ≤ Maximum age
+// [68, -1, 1, -7, 10, 10] => [-1, 10]
 
-// Task
-// Given an integer (1 <= n <= 100) representing a person's age, return their minimum and maximum age range.
-
-// This equation doesn't work when the age <= 14, so if the age <= 14, use this equation instead:
-
-// min = age - 0.10 * age
-// max = age + 0.10 * age
-// You should floor all your answers so that an integer is given instead of a float (which doesn't represent age). Return your answer in the form "[min]-[max]"
-
-// Examples:
-// age = 27   =>   "20-40"
-// age = 5    =>   "4-5"
-// age = 17   =>   "15-20"
+// [-56,-85,72,-26,-14,76,-27,72,35,-21,-67,87,0,21,59,27,-92,68] => [-85, 72, 0, 68]
 
 //Solution
 
-function datingRange(age){
-//check if the age is greater than 14 if so use top equation
-  if(age >14){
-    //store the min calculation in a variable
-    let min = Math.floor((age/2)+7)
-    //store the max caluclation in a variable
-    let max = Math.floor(2*(age-7))
-    //return a template str with the variables for the range
-    return `${min}-${max}`
-    //if the age is <= to 14 
-  }else{
-    //store the min calculation in a variable
-
-    let min = Math.floor(age - 0.10 * age)
-    //store the max caluclation in a variable
-    let max = Math.floor(age + 0.10 * age)
-    //return a template str with the variables for the range
-    return `${min}-${max}`
+function multipleOfIndex(array) {
+//set up a variable to store the array of elements that are multiple of their index
+  let result = []
+//if the 0 index element is zero and i =0 push the zero to the result array
+  if(array[0] === 0){
+    result.push(array[0])
   }
-
+//loop through input array 
+for(let i=1; i<array.length; i++){
+//else divide the element by its index if there is a reminder do not push it
+    if(array[i]%i === 0){
+      result.push(array[i])
+    }
+  }
+//return the result array
+  return result
 }
 
-//num -> number between 1 and 100 tht represents a persons age, wont be empty, wont be null or undefined, will always be a num between 1 and 100
 
-//str -> if age is greater than 14 use the top equation else use the bottom equation
+//arr -> arr of nums, nums can be zero and negative, wont be empty, wont be null or undefined, will always be an array of nums
 
-console.log(datingRange(27), "20-40")
+//arr-> an array that contains only elements that are multiples of their index. If the first element = 0 then push the element, 
+
